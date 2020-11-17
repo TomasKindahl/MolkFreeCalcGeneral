@@ -36,7 +36,7 @@ namespace CStackClass
          */
         public string StackString()
         {
-            return $"{T}\n{Z}\n{Y}\n{X}\n{entry}";
+            return $"T:{T}\nZ:{Z}\nY:{Y}\nX:{X}\n{entry}";
         }
         /* METHOD: SetX
          * PURPOSE: set X with overwrite
@@ -150,6 +150,8 @@ namespace CStackClass
             {
                 case "+": DropSetX(Y + X); break;
                 case "−": DropSetX(Y - X); break;
+                case "*":
+                case "x":
                 case "×": DropSetX(Y * X); break;
                 case "÷": DropSetX(Y / X); break;
                 case "yˣ": /* NYI: Power */ break;
