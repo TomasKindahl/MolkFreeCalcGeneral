@@ -11,6 +11,7 @@ namespace ConsoleCalc
     {
         static void Main(string[] args)
         {
+            //
             CStack cs;
             cs = new CStack();
             cs.X = 12;
