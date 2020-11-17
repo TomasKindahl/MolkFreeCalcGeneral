@@ -224,7 +224,10 @@ namespace CStackClass
          */
         public void RollSetX(double newX)
         {
-            T = Z; Z = Y; Y = X; X = newX;
+            T = Z; 
+            Z = Y; 
+            Y = X; 
+            X = newX;
         }
     }
 }

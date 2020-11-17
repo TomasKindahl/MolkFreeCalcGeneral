@@ -11,12 +11,15 @@ namespace ConsoleCalc
     {
         static void Main(string[] args)
         {
-            CStack cs;
-            cs = new CStack();
+            CStack cs = new CStack();
             bool stop = false;
             Console.WriteLine("welcome to calc");
             string input;
             string[] commands;
+            //string currentFile = @".\kommandoFile.txt";
+
+
+
             do
             {
                 Console.Write("> ");
@@ -32,7 +35,6 @@ namespace ConsoleCalc
                 {
                     cs.entry = commands[1];
                     cs.Enter();
-                    Console.WriteLine("test");
 
                 }
                 else if (commands[0] == "+")
@@ -53,10 +55,10 @@ namespace ConsoleCalc
                 }
                 else if (commands[0] == "show")
                 {
-                    Console.WriteLine($"T: {cs.T.ToString()}");
-                    Console.WriteLine($"Z: {cs.Z.ToString()}");
-                    Console.WriteLine($"Y: {cs.Y.ToString()}");
-                    Console.WriteLine($"X: {cs.X.ToString()}");
+                    Console.WriteLine($"T: {cs.T}");
+                    Console.WriteLine($"Z: {cs.Z}");
+                    Console.WriteLine($"Y: {cs.Y}");
+                    Console.WriteLine($"X: {cs.X}");
                 }
                 else
                 {
