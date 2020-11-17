@@ -162,7 +162,7 @@ namespace CStackClass
          *   GUI buttons
          * RETURNS: --
          * FEATURES: the stack is not moved, X is replaced by the result of
-         *   the operation
+         *   the operation 
          */
         public void Unop(string op)
         {
