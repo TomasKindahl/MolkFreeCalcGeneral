@@ -1,7 +1,7 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Text;   
 using System.Threading.Tasks;
 using CStackClass;
 
@@ -57,6 +57,12 @@ namespace ConsoleCalc
                     Console.WriteLine($"Z: {cs.Z.ToString()}");
                     Console.WriteLine($"Y: {cs.Y.ToString()}");
                     Console.WriteLine($"X: {cs.X.ToString()}");
+                }
+                else
+                if(commands[0]=="clear")
+                {
+                    cs.Reset();
+                    Console.WriteLine("Done...");
                 }
                 else
                 {

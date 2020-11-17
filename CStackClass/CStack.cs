@@ -222,6 +222,10 @@ namespace CStackClass
          * RETURNS: --
          * FEATURES: T is dropped
          */
+       public void Reset()
+        {
+            X = 0;Y = 0;Z = 0;T = 0;
+        }
         public void RollSetX(double newX)
         {
             T = Z; Z = Y; Y = X; X = newX;
