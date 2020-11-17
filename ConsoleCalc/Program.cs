@@ -13,7 +13,42 @@ namespace ConsoleCalc
         {
             CStack cs;
             cs = new CStack();
-            cs.X = 12;
+            // cs.X = 12;
+            
+            string[] com;
+            do
+	        {
+                Console.Write("> ");
+                com = Console.ReadLine().Split(' ');
+                switch (com[0])
+                {
+                    case"enter": 
+                        cs.RollSetX(double.Parse(com[1]));
+                        Console.WriteLine($"T:{cs.T}\nZ:{cs.Z}\nY:{cs.Y}\nX:{cs.X}");
+                        break;
+                    case"*": cs.BinOp("×");
+                        Console.WriteLine($"T:{cs.T}\nZ:{cs.Z}\nY:{cs.Y}\nX:{cs.X}");
+                        break;
+                    case "+":
+                        cs.BinOp("+");
+                        Console.WriteLine($"T:{cs.T}\nZ:{cs.Z}\nY:{cs.Y}\nX:{cs.X}");
+                        break;
+                    case "-":
+                        cs.BinOp("−");
+                        Console.WriteLine($"T:{cs.T}\nZ:{cs.Z}\nY:{cs.Y}\nX:{cs.X}");
+                        break;
+                    case "/":
+                        cs.BinOp("÷");
+                        Console.WriteLine($"T:{cs.T}\nZ:{cs.Z}\nY:{cs.Y}\nX:{cs.X}");
+                        break;
+                    case "show":
+                        Console.WriteLine($"T:{cs.T}\nZ:{cs.Z}\nY:{cs.Y}\nX:{cs.X}");
+                        Console.WriteLine(cs.StackString());
+                        break;
+
+                }
+            } while (com[0] != "quit");
+
         }
     }
 }
