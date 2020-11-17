@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MolkFreeCalc
+namespace CStackClass
 {
     /* CLASS: CStack
      * PURPOSE: Is essentially a RPN-calculator with four registers X, Y, Z, T
@@ -152,8 +152,10 @@ namespace MolkFreeCalc
             {
                 case "+": DropSetX(Y + X); break;
                 case "−": DropSetX(Y - X); break;
+                case "-": DropSetX(Y - X); break;
                 case "×": DropSetX(Y * X); break;
-                case "÷": DropSetX(Y / X); break;
+                case "*": DropSetX(Y * X); break;
+                case "/": DropSetX(Y / X); break;
                 case "yˣ": DropSetX(Math.Pow(Y, X)); break;
                 case "ˣ√y": DropSetX(Math.Pow(Y, (1.0 / X))); break;
             }
