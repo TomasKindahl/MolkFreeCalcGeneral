@@ -16,12 +16,12 @@ namespace ConsoleCalc
             cs = new CStack();          
             
             do{
-
                 Console.Write("> ");
                 command = Console.ReadLine();
                 string[] commandWord = command.Split(' ');
 
-                if (command == "show"){
+                if (command == "show")
+                {
                     Console.WriteLine("T: "+(cs.T));
                     Console.WriteLine("Z: "+(cs.Z));
                     Console.WriteLine("Y: "+(cs.Y));
@@ -38,14 +38,28 @@ namespace ConsoleCalc
 	            }
                 else if (command == "+")
 	            {
-                                     
+                    double result = cs.Y + cs.X;            
+                    cs.X = result;
+	            } 
+                else if (command == "-")
+	            {
+                    double result = cs.Y - cs.X;            
+                    cs.X = result;
+	            } 
+                else if (command == "/")
+	            {
+                    double result = cs.Y / cs.X;            
+                    cs.X = result;
+	            } 
+                else if (command == "*")
+	            {
+                    double result = cs.Y * cs.X;            
+                    cs.X = result;
 	            }
 	
 	        } while (command != "quit");
 
         }
-
-       
 
     }
 }
