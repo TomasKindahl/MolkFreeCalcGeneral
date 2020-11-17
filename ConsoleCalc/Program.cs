@@ -13,7 +13,42 @@ namespace ConsoleCalc
         {
             CStack cs;
             cs = new CStack();
-            cs.X = 12;
+            bool check = false;
+            string command;
+            do
+            {
+                command = Console.ReadLine();
+                string[] commandWord = command.Split(' ');
+
+                switch (commandWord[0]){
+                    case "enter":
+                        double newX = double.Parse(commandWord[1]);
+                        cs.RollSetX(newX);
+                        break;
+                    case "+":
+                        cs.BinOp(commandWord[0]);
+                        break;
+                    case "-":
+                        cs.BinOp(commandWord[0]);
+                        break;
+                    case "*":
+                        cs.BinOp(commandWord[0]);
+                        break;
+                    case "/":
+                        cs.BinOp(commandWord[0]);
+                        break;
+
+
+                        break;
+                    case "show":
+                        Console.WriteLine(cs.StackString());
+                        break;
+                    case "quit":
+                        check = true;
+                        break;
+                }
+
+            } while(!check);
         }
     }
 }
