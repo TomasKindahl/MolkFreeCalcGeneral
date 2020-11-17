@@ -155,7 +155,7 @@ namespace CStackClass
             {
                 case "+": DropSetX(Y + X); break;
                 case "−": DropSetX(Y - X); break;
-                case "×": DropSetX(Y * X); break;
+                case "x": DropSetX(Y * X); break;
                 case "÷": DropSetX(Y / X); break;
                 case "yˣ": DropSetX(Math.Pow(Y, X)); break;
                 case "ˣ√y": DropSetX(Math.Pow(Y, 1 / X)); break;

@@ -1,0 +1,1 @@
+enter 365,2422;enter 24;*;enter 60;*;enter 60;*;show
