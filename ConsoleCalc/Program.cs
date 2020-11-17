@@ -32,7 +32,6 @@ namespace ConsoleCalc
                 {
                     cs.entry = commands[1];
                     cs.Enter();
-                    Console.WriteLine("test");
 
                 }
                 else if (commands[0] == "+")
