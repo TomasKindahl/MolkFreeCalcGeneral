@@ -38,6 +38,15 @@ namespace CStackClass
         {
             return $"{T}\n{Z}\n{Y}\n{X}\n{entry}";
         }
+        /* METHOD: Show
+         * PURPOSE: Prints t,z,y,x
+         * PARAMETERS: --
+         * RETURNS: --
+         */
+        public void Show()
+        {
+            Console.WriteLine("T: {0} \nZ: {1}\nY: {2}\nX: {3}", T, Z, Y, X);
+        }
         /* METHOD: SetX
          * PURPOSE: set X with overwrite
          * PARAMETERS: double newX - the new value to put in X
@@ -146,16 +155,19 @@ namespace CStackClass
          */
         public void BinOp(string op)
         {
+            
             switch (op)
             {
-                case "+": DropSetX(Y + X); break;
+                case "+": DropSetX(Y + X);  break;
                 case "−": DropSetX(Y - X); break;
+                case "*": 
                 case "×": DropSetX(Y * X); break;
                 case "÷": DropSetX(Y / X); break;
-                case "yˣ": /* NYI: Power */ break;
-                case "ˣ√y": /* NYI: Xth Root */ break;
+                case "yˣ": DropSetX(Math.Pow(Y, X)); break;
+                case "ˣ√y": DropSetX(Math.Pow(Y, 1 / X)); break;
             }
         }
+        
         /* METHOD: Unop
          * PURPOSE: evaluates a unary operation
          * PARAMETERS: string op - the unary operation retrieved from the
