@@ -10,7 +10,7 @@ using CStackClass;
 namespace ConsoleCalc
 {
     class Program
-    {
+    {asasas
         static void Main(string[] args)
         {
             bool quit = false;
