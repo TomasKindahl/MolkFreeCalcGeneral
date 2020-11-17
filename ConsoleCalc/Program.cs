@@ -35,7 +35,7 @@ namespace ConsoleCalc
             {
                 Console.WriteLine(cs.StackString());
             }
-            else if (commandWord[0] == "load")
+            else if (commandWord[0] == "execute")
             {
                 try
                 {
@@ -58,6 +58,52 @@ namespace ConsoleCalc
                     Console.WriteLine(e.Message);
                 }
             }
+
+            else if (commandWord[0] == "load")
+            {
+                try
+                {
+                    using (StreamReader sr = new StreamReader(@commandWord[1]))
+                    {
+                        string line;
+
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            string[] lineWord = line.Split(':');
+                            cs.X = double.Parse(lineWord[0]);
+                            cs.Y = double.Parse(lineWord[1]);
+                            cs.Z = double.Parse(lineWord[2]);
+                            cs.T = double.Parse(lineWord[3]);
+
+
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("The file could not be read:");
+                    Console.WriteLine(e.Message);
+                }
+            }
+            else if (commandWord[0] == "save")
+            {
+                try
+                {
+                    using (StreamWriter sr = new StreamWriter(@commandWord[1]))
+                    {
+
+
+                        sr.WriteLine("{0}:{1}:{2}:{3}", cs.X, cs.Y, cs.Z, cs.T);
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("The file could not be read:");
+                    Console.WriteLine(e.Message);
+                }
+            }
+
         }
     }
 }
