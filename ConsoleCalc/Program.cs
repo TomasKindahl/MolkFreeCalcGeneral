@@ -64,7 +64,6 @@ namespace ConsoleCalc
             } while (command[0] != "quit");
 
             Console.ReadKey();
-
         }
         
     }
