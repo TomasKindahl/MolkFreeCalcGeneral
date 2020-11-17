@@ -11,62 +11,44 @@ namespace ConsoleCalc
     {
         static void Main(string[] args)
         {
+            bool quit = false;
             CStack cs;
             cs = new CStack();
-            bool stop = false;
-            Console.WriteLine("welcome to calc");
             string input;
-            string[] commands;
+            string[] words;
+            Console.WriteLine("ConsoleCalc Grupp 4");
             do
             {
                 Console.Write("> ");
                 input = Console.ReadLine();
-                commands = input.Split(' ');
+                words = input.Split(' ');
 
-                if ( commands[0] == "quit")
-                {//
-                    Console.WriteLine("hej då");
-                    stop = true;
-                }
-                else if ( commands[0] == "enter" && commands.Length == 2 )
+                if (words[0] == "quit")
                 {
-                    cs.entry = commands[1];
+                    quit = true;
+                    Console.WriteLine("Hejdå!");
+                }
+                else if (words[0] == "enter")
+                {
+                    cs.entry = words[1];
                     cs.Enter();
-                    Console.WriteLine("test");
-
                 }
-                else if (commands[0] == "+")
+                else if (words[0] == "show")
                 {
-                    cs.BinOp("+");
+                    Console.WriteLine($"X = {cs.X}");
+                    Console.WriteLine($"Y = {cs.Y}");
+                    Console.WriteLine($"Z = {cs.Z}");
+                    Console.WriteLine($"T = {cs.T}");
                 }
-                else if (commands[0] == "*")
+                switch (words[0])
                 {
-                    cs.BinOp("×");
+                    case "+": cs.BinOp("+"); break;
+                    case "-": cs.BinOp("-"); break;
+                    case "x": cs.BinOp("×"); break;
+                    case "÷": cs.BinOp("÷"); break;
+                    default: break;
                 }
-                else if (commands[0] == "-")
-                {
-                    cs.BinOp("−");
-                }
-                else if (commands[0] == "/")
-                {
-                    cs.BinOp("÷");
-                }
-                else if (commands[0] == "show")
-                {
-                    Console.WriteLine($"T: {cs.T.ToString()}");
-                    Console.WriteLine($"Z: {cs.Z.ToString()}");
-                    Console.WriteLine($"Y: {cs.Y.ToString()}");
-                    Console.WriteLine($"X: {cs.X.ToString()}");
-                }
-                else
-                {
-                    Console.WriteLine("wrong input, try again");
-                }
-
-            } while (!stop);
-
-
-            Console.ReadKey();
+            } while (!quit);
 
         }
     }
