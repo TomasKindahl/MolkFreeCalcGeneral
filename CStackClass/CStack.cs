@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
+using System.IO;
 
 namespace CStackClass
 {
@@ -225,6 +227,32 @@ namespace CStackClass
         public void RollSetX(double newX)
         {
             T = Z; Z = Y; Y = X; X = newX;
+        }
+        public void ReadFile(string filePath)
+        {
+            string[] fileText = File.ReadAllText(filePath).Split(';');
+            for (int i = 0; i < fileText.Length; i++)
+            {
+                string[] word = fileText[i].Split(' ');
+                switch (word[0])
+                {
+                    case "enter":
+                        entry = word[1];
+                        Enter();
+                        break;
+                    case "+": BinOp("+"); break;
+                    case "-": BinOp("-"); break;
+                    case "*": BinOp("x"); break;
+                    case "÷": BinOp("÷"); break;
+                    case "show":
+                        Console.WriteLine($"X = {X}");
+                        Console.WriteLine($"Y = {Y}");
+                        Console.WriteLine($"Z = {Z}");
+                        Console.WriteLine($"T = {T}");
+                        break;
+                    default: break;
+                }
+            }
         }
     }
 }
