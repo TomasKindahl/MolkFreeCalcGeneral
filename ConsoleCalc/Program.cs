@@ -53,9 +53,8 @@ namespace ConsoleCalc
                     case "/":
                         cs.BinOp(command[0]);
                         break;
-                    case "pi":
-                            command[0] = "π";
-                            cs.Nilop(command[0]);
+                    case "pi":                            
+                            cs.Nilop("π");
                         break;
                     case "e":
                         cs.Nilop(command[0]);
