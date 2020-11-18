@@ -23,16 +23,11 @@ namespace ConsoleCalc
                 Console.Write("> ");
                 input = Console.ReadLine();
                 commands = input.Split(' ');
-
                 stop = ParseCommand(commands, cs);
-
 
             } while (!stop);
 
-
-
             Console.ReadKey();
-
         }
 
         static public bool ParseCommand(string[] commands, CStack cs)
