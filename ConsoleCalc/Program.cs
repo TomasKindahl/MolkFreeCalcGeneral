@@ -144,7 +144,6 @@ namespace ConsoleCalc
                 Console.WriteLine("Unknown command: {0}", commands[0]);
             }
         }
-
         static void Show(CStack cs)
         {
             Console.WriteLine("T: {0}\nZ: {1}\nY: {2}\nX: {3}",
