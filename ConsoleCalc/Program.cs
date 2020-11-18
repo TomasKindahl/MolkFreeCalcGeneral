@@ -37,11 +37,14 @@ namespace ConsoleCalc
                     case "/":
                         cs.BinOp(commandWord[0]);
                         break;
-
-
-                        break;
                     case "show":
                         Console.WriteLine(cs.StackString());
+                        break;
+                    case "save":
+                        cs.Save(commandWord[1]);
+                        break;
+                    case "load":
+                        cs.Load(commandWord[1]);
                         break;
                     case "quit":
                         check = true;

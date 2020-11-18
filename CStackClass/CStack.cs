@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace CStackClass
 {
@@ -220,6 +221,23 @@ namespace CStackClass
         public void RollSetX(double newX)
         {
             T = Z; Z = Y; Y = X; X = newX;
+        }
+        public void Load(string path)
+        {
+
+            string[] tmp = File.ReadAllLines(path);
+            X = double.Parse(tmp[0]);
+            Y = double.Parse(tmp[1]);
+            Z = double.Parse(tmp[2]);
+            T = double.Parse(tmp[3]);
+
+        }
+        public void Save(string path)
+        {
+            string[] entries = {X.ToString(), Y.ToString(), Z.ToString(), T.ToString()};
+
+            File.WriteAllText(path, "");
+            File.WriteAllLines(path, entries);
         }
     }
 }
