@@ -37,12 +37,22 @@ namespace ConsoleCalc
         private static void OperationList(CStack cs, string[] commands)
         {
             
+            
             if (commands[0] == "enter" && commands.Length == 2)
             {
                 cs.entry = commands[1];
                 cs.Enter();
             }
+            else if (commands[0] == "save")
+            {
+                cs.Save(commands[1]);
+            }
+            else if (commands[0] == "load")
+            {
+                cs.Load(commands[1]);
+            }
             else if (commands[0] == "+")
+
             {
                 cs.BinOp("+");
             }
