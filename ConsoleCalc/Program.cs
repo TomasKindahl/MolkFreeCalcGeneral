@@ -13,17 +13,14 @@ namespace ConsoleCalc
         {
             CStack cs;
             cs = new CStack();
-<<<<<<< HEAD
             cs.X = 0;
-=======
-
-            
             string[] command = { "" };
             do
             {
                 Console.Write(">");
+               
                 command = Console.ReadLine().Split(' ');
-                
+
                 switch (command[0])
                 {
                     case "enter":
@@ -35,20 +32,17 @@ namespace ConsoleCalc
                         Console.WriteLine("Y: {0} ", cs.Y);
                         Console.WriteLine("X: {0} ", cs.X);
                         break;
-                    case "x²":
-                    case "√x":
+                    case "sqrt": cs.Unop("√x"); break;
+                    case "10^": cs.Unop("10ˣ"); break;
+                    case "x^2": cs.Unop("x²"); break;
+                    case "e^": cs.Unop("eˣ"); break;
                     case "log x":
                     case "ln x":
-                    case "10ˣ":
-                    case "eˣ":
                     case "sin":
-                    case "cos":
-                    case "tan":
-                    case "sin⁻¹":
-                    case "cos⁻¹":
-                    case "tan⁻¹":
-                        cs.Unop(command[0]);
-                        break;
+                    case "tan": cs.Unop(command[0]);break;
+                    case "arcsin": cs.Unop("sin⁻¹"); break;
+                    case "arccos": cs.Unop("cos⁻¹"); break;
+                    case "arctan": cs.Unop("tan⁻¹"); break;  
                     case "+":
                     case "-":
                     case "×":
@@ -57,8 +51,7 @@ namespace ConsoleCalc
                         cs.BinOp(command[0]);
                         break;
                     case "pi":
-                            command[0] = "π";
-                            cs.Nilop(command[0]);
+                        cs.Nilop("π");
                         break;
                     case "e":
                         cs.Nilop(command[0]);
@@ -66,71 +59,10 @@ namespace ConsoleCalc
                 }
 
             } while (command[0] != "quit");
->>>>>>> 1804e9f5816b15c727395b0220a05fd7df9634ca
-
-            Console.WriteLine("----CONSOLECALC----");
-
-            string[] command = { "" };
-            do
-            {
-                Console.Write(">");
-                command = Console.ReadLine().Split(' ');
-
-                if (command[0] == "enter")
-                {
-                    cs.RollSetX(double.Parse(command[1]));
-                }
-                else if (command[0] == "show")
-                {
-                    Console.WriteLine("T: {0} ", cs.T);
-                    Console.WriteLine("Z: {0} ", cs.Z);
-                    Console.WriteLine("Y: {0} ", cs.Y);
-                    Console.WriteLine("X: {0} ", cs.X);
-                }
-
-                else
-                    switch (command[0])
-                    {
-                        case "x²":
-                        case "√x":
-                        case "log x":
-                        case "ln x":
-                        case "10ˣ":
-                        case "eˣ":
-                        case "sin":
-                        case "cos":
-                        case "tan":
-                        case "sin⁻¹":
-                        case "cos⁻¹":
-                        case "tan⁻¹":
-                            cs.Unop(command[0]);
-                            break;
-
-                        case "+":
-                            cs.BinOp("+");
-                            break;
-                        case "-":
-                            cs.BinOp("−");
-                            break;
-                        case "*":
-                            cs.BinOp("×");
-                            break;
-                        case "/":
-                            cs.BinOp("÷");
-                            break;
-
-                        case "π":
-                        case "e":
-                            cs.Nilop(command[0]);
-                            break;
-                    }
-
-            } while (command[0] != "quit");
         }
-        
+
     }
 }
-
 //do
 //{
 //    if (Console.ReadKey().Key == ConsoleKey.Enter)
