@@ -226,5 +226,9 @@ namespace CStackClass
         {
             T = Z; Z = Y; Y = X; X = newX;
         }
+        public void Reset()
+        {
+            X = 0; Y = 0; Z = 0; T = 0;
+        }
     }
 }
