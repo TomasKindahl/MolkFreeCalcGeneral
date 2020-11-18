@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace CStackClass
 {
@@ -229,6 +230,26 @@ namespace CStackClass
         public void Reset()
         {
             X = 0; Y = 0; Z = 0; T = 0;
+        }
+        public void SaveStack()
+        {
+            string file_name = @"C:\Users\vikke\Desktop\saved.txt";
+
+            string[] writeToFile = new string[4];
+
+            string stringT = $"T: {T}";
+            string stringZ = $"Z: {Z}";
+            string stringY = $"Y: {Y}";
+            string stringX = $"X: {X}";
+            writeToFile[0] = stringT;
+            writeToFile[1] = stringZ;
+            writeToFile[2] = stringY;
+            writeToFile[3] = stringX;
+
+            //TBD: kolla så file_name exists
+            File.WriteAllLines(file_name, writeToFile);
+            Console.WriteLine("List is now saved to file: {0}", file_name);
+             
         }
     }
 }

@@ -86,6 +86,10 @@ namespace ConsoleCalc
                 cs.Reset();
                 Console.WriteLine("Done...");
             }
+            else if (commands[0] == "save")
+            {
+                cs.SaveStack();
+            }
             else
             {
                 Console.WriteLine("wrong input, try again");
