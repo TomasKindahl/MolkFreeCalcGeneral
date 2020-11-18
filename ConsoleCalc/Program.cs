@@ -80,6 +80,11 @@ namespace ConsoleCalc
                     Console.WriteLine($"Y: {cs.Y}");
                     Console.WriteLine($"X: {cs.X}");
                 }
+                else if (commands[0] == "clear")
+                {
+                    cs.Reset();
+                    Console.WriteLine("Done...");
+                }
                 else
                 {
                     Console.WriteLine("wrong input, try again");
